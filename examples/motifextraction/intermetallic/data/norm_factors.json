@@ -1,18 +1,18 @@
 {
   "L2": {
-    "set_to_inf_before_dividing": 0.28448077175918085,
-    "divide_by": 0.03209710474426502
+    "set_to_inf_before_dividing": 0.22148192029088853,
+    "divide_by": 0.03075206740487416
   },
   "L1": {
-    "set_to_inf_before_dividing": 1.3273458515832595,
-    "divide_by": 0.14513272398258192
+    "set_to_inf_before_dividing": 1.0515993803751242,
+    "divide_by": 0.13964420844258568
   },
   "Linf": {
-    "set_to_inf_before_dividing": 2.8861427260152115,
-    "divide_by": 0.29155604021496695
+    "set_to_inf_before_dividing": 2.354434417353695,
+    "divide_by": 0.2892333697512808
   },
   "angular": {
-    "set_to_inf_before_dividing": 31.625282670762466,
-    "divide_by": 4.788272954290943
+    "set_to_inf_before_dividing": 28.447499715980925,
+    "divide_by": 4.615404900699629
   }
 }

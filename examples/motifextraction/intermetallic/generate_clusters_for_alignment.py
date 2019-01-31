@@ -93,7 +93,7 @@ def generate_clusters(modelfiles):
                 box=md.box,
             )
             c.fix_pbcs()  # This also recenters.
-            if c.CN < 10:
+            if c.CN < 11:  # Atoms with CN less than 11 are on the edge of the model, so we'll ignore those for this example
                 continue
             c.to_xyz(dir / f'{pick}.xyz')
             cns[c.CN] += 1
@@ -101,7 +101,7 @@ def generate_clusters(modelfiles):
             pick += 1
 
             if random_selection:
-                holding_model.append(atom)  # TODO Need to convert this to a model afterwards
+                holding_model.append(atom)
 
     holding_model.to_xyz(filename='holding_model.xyz',
                          comment='combined model',
