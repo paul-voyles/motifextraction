@@ -11,11 +11,12 @@ def load_labels(direc: Path):
     labels = []
     for fn in direc.glob("*"):
         stem = fn.stem
-        assert stem.startswith("_")
-        stem = stem[1:]
+        #assert stem.startswith('_')
+        assert stem.startswith('CN')
+        _index = stem.index('_')
+        stem = stem[_index+1:]
         all_negative_ones = (len(stem.replace("-1", "")) == 0)
-        if stem.count("-1") < 5 and not all_negative_ones:
-            labels.append(load_label(fn))
+        labels.append(load_label(fn))
     return labels
 
 

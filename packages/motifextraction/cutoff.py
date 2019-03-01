@@ -66,11 +66,11 @@ cutoff[('Al','Sm')] = 3.8
 cutoff[('Sm','Al')] = 3.8
 
 # Ni Zr
-#cutoff[(28,28)] = 3.8
-#cutoff[(40,40)] = 3.8
-cutoff[(28,40)] = 3.8
-cutoff[(40,28)] = 3.8
-#cutoff[('Zr','Zr')] = 3.8
-#cutoff[('Ni','Ni')] = 3.8
-cutoff[('Zr','Ni')] = 3.8
-cutoff[('Ni','Zr')] = 3.8
+#cutoff[(28,28)] = 3.6
+#cutoff[(40,40)] = 3.6
+cutoff[(28,40)] = 3.6
+cutoff[(40,28)] = 3.6
+#cutoff[('Zr','Zr')] = 3.6
+#cutoff[('Ni','Ni')] = 3.6
+cutoff[('Zr','Ni')] = 3.6
+cutoff[('Ni','Zr')] = 3.6

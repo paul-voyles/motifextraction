@@ -133,9 +133,7 @@ class HDBSCANGroup(object):
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
         print_this = True
-        if self.parent is None:
-            print_this = False
-        else:
+        if self.parent is not None:
             # If the same center, this child just has less points in it so I want to prioritize the parent because it
             #  has more points.
             if self.parent.center == self.center:

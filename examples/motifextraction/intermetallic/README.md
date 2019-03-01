@@ -6,7 +6,7 @@ We provide a CuZr2 intermetallic model in XYZ format (see `modelfiles/`) and the
 
 1) The nearest neighbors of each atom in the model are identified. We crudely ignore "surface" atoms (because the model is in XYZ rather than CIF format and the non-cubic PBCs are not defined in this code) by only considering atoms with 10+ neighbors. The center atom + nearest neighbor structure (aka "clusters") are identified and extracted by running `python generate_clusters_for_alignment.py modelfiles/CuZr2_324.xyz` from the current directory directory. The clusters are saved in `data/clusters/`.
 
-2) The all-to-all alignment of the clusters is performed by running `./setup.sh`. This file primarily runs `alignment/align_clusters.py` with each cluster as input; this file aligns all of the clusters in `data/clusters/` to the input structure. The results are stored in `data/results/`. Four metrics are calculated for each alignment using the file `alignment/extract_errors.py`; the results are stored in `data/errors/`.
+2) The all-to-all alignment of the clusters is performed by running `./setup.sh` in the `alignment` directory. This file primarily runs `alignment/align_clusters.py` with each cluster as input; this file aligns all of the clusters in `data/clusters/` to the input structure. The results are stored in `data/results/`. Four metrics are calculated for each alignment using the file `alignment/extract_errors.py`; the results are stored in `data/errors/`.
 
 3) The error metrics are then reformatted into a set of dissimilarity matrices, and the geometric mean of the matrices is calculated to create a final dissimilarity matrix that we provide to HDBSCAN for clustering. This is done by running `python create_affinities.py` from the `clustering/` directory.
 
