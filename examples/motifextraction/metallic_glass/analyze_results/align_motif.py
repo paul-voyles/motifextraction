@@ -16,7 +16,7 @@ def align_all_to(motif_path):
     print(target_files)
     assert len(model_files) > len(target_files)
 
-    run_alignments(target_files=target_files, model_files=model_files, save_dir=save_dir)
+    run_alignments(target_files=target_files, model_files=model_files, save_dir=save_dir, skip_if_diff_CN=True)
 
 
 def main():

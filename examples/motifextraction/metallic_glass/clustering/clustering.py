@@ -1,4 +1,5 @@
 import sys
+import numpy as np
 from path import Path
 from collections import defaultdict
 
@@ -17,7 +18,7 @@ def main():
     print(f"Min cluster size for HDBSCAN: {min_cluster_size_for_hdbscan}  (Total # of clusters: {nclusters})")
     save_dir = affinity_path.parent / "indices/"
 
-    split_by_cn = False
+    split_by_cn = True
     if not split_by_cn:
         g0 = HDBSCANGroup(affinity,
                           cns=cns,
@@ -37,8 +38,12 @@ def main():
         cn_dict = defaultdict(list)
         for i, cn in enumerate(cns):
             cn_dict[cn].append(i)
+        for i, cn in enumerate(cns):
+            cn_dict[cn] = np.array(cn_dict[cn])
         affinities = split_affinity_by_cn(affinity, cn_dict)
         for cn, affinity in affinities.items():
+            if affinity.size <= 1:
+                continue
             print("CN: {}".format(cn))
             g0 = HDBSCANGroup(affinity,
                               cns=cns,
