@@ -11,8 +11,7 @@ def load_labels(direc: Path):
     labels = []
     for fn in direc.glob("*"):
         stem = fn.stem
-        #assert stem.startswith('_')
-        assert stem.startswith('CN')
+        assert stem.startswith('_') or stem.startswith('CN')
         _index = stem.index('_')
         stem = stem[_index+1:]
         all_negative_ones = (len(stem.replace("-1", "")) == 0)

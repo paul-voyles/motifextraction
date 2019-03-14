@@ -130,7 +130,7 @@ class HDBSCANGroup(object):
 
     def recursive_print(self, cns: np.ndarray, save_dir: Path):
         # `cns` is a numpy array of all the CNs of the SRO units
-        if not os.path.exists(save_dir):
+        if save_dir is not None and not os.path.exists(save_dir):
             os.makedirs(save_dir)
         print_this = True
         if self.parent is not None:
@@ -138,6 +138,8 @@ class HDBSCANGroup(object):
             #  has more points.
             if self.parent.center == self.center:
                 print_this = False
+        #else:
+        #    print_this = False
 
         if print_this:
             print(f"Input affinity size: {len(self.affinity)}  Center: {self.center}")
@@ -147,6 +149,7 @@ class HDBSCANGroup(object):
                 print(f"CNs in this cluster: {FractionalCounter(_cns)}")
             print(f"HDBSCAN results: {self.label_counter}")
             print('')
-            np.savetxt(f"{save_dir}/{self.label}.txt", self.indices, header=f"{self.center} {self.label}")
+            if save_dir is not None:
+                np.savetxt(f"{save_dir}/{self.label}.txt", self.indices, header=f"{self.center} {self.label}")
         for label, child in self._children.items():
             child.recursive_print(cns, save_dir=save_dir)
