@@ -44,8 +44,6 @@ To install this code, simply add it to your `PYTHONPATH` environment variable. M
 
 This code uses PPM to perform all-to-all alignments of the clusters in an atomic model.
 
-The `alignment/` directory performs all pairwise alignments of the clusters. The `clustering/` directory performs HDBSCAN to identify groups of similar clusters. The `analyze_results/` directory takes the results from `clustering/` and creates the motifs.
-
 ### Creating the `voronoi` Executable
 
 The `voronoi.cc` file can be compiled by linking to the Voro++ library, and the resulting executable should be named `voronoi` and placed on your `PATH` environment variable. To compile the file by linking to Voro++, run this command (it may need some modification for your system): `g++ -Wall -ansi -pedantic -O3 -I../../src -L../../src -o voronoi voronoi.cc -lvoro++`
