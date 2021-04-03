@@ -1,9 +1,10 @@
 # Motif Extraction and Point-Pattern Matching (3D)
 
 This code uses three-dimensional point-pattern matching (ppm3d) to perform all-to-all alignments of the clusters in an atomic model. See the following papers for more information:
-https://arxiv.org/pdf/1901.04124.pdf
-https://arxiv.org/pdf/1811.06098.pdf
-https://arxiv.org/pdf/1901.07014.pdf
+
+* https://arxiv.org/pdf/1901.04124.pdf
+* https://arxiv.org/pdf/1811.06098.pdf
+* https://arxiv.org/pdf/1901.07014.pdf
 
 The latest version of the PPM code can be found at: https://github.com/spatala/ppm3d
 
