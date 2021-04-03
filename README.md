@@ -6,7 +6,9 @@ This code uses three-dimensional point-pattern matching (ppm3d) to perform all-t
 * https://arxiv.org/pdf/1811.06098.pdf
 * https://arxiv.org/pdf/1901.07014.pdf
 
-The latest version of the PPM code can be found at: https://github.com/spatala/ppm3d
+The latest version of the ppm3d code can be found at: https://github.com/spatala/ppm3d
+
+The motif extraction code uses ppm3d to perform all-to-all alignments of the clusters in an atomic model.
 
 ## Examples
 
@@ -37,13 +39,11 @@ First, download or `git clone` this repository to your computer.
 
 After you have downloaded this repo, open a terminal and `cd` to the `.../motifextraction/packages/ppm3d/` directory. Then download or `git clone` Banadaki and Patala's ppm3d code from here: https://github.com/spatala/ppm3d  Once downloaded, change the name of the downloaded folder from `ppm3d` to `_ppm3d`. `cd` into `_ppm3d`, then install the code following their installation instructions. It may take some time to compile.
 
-Modify your `PYTHONPATH` environment variable to include the directory: `.../motifextraction/packages/ppm3d`. On Linux/Mac this can be done by running `export PYTHONPATH=$PYTHONPATH:.../motifextraction/packages/ppm3d`.
+Modify your `PYTHONPATH` environment variable to include the directory: `.../motifextraction/packages`. On Linux/Mac this can be done by running `export PYTHONPATH=$PYTHONPATH:.../motifextraction/packages`.
 
 ### Installing Motif Extraction
 
-To install this code, simply add it to your `PYTHONPATH` environment variable. Modify your `PYTHONPATH` environment variable to include the directory: `.../motifextraction/packages/motifextraction`. On Linux/Mac this can be done by running `export PYTHONPATH=$PYTHONPATH:.../motifextraction/packages/motifextraction`.
-
-This code uses PPM to perform all-to-all alignments of the clusters in an atomic model.
+To install the motif extraction code, the same path as above needs to be added to your `PYTHONPATH`. Simply make sure `.../motifextraction/packages` is in your `PYTHONPATH`.
 
 ### Creating the `voronoi` Executable
 
